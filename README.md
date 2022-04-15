@@ -1,5 +1,5 @@
 # uturn - a small URL Shortner Written in Rust
-[WIP]
+[WIP - Issues are maintained for myself to know what to work on!]
 
 `uturn` is a small, in-memory URL Shortener written in Rust, using `rocket` and `serde`. You can
 Add, Modify and Delete URLs.
