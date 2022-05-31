@@ -13,3 +13,7 @@ Add, Modify and Delete URLs.
     ```shell
     $ cargo run
     ```
+
+## Database Schema
+
+

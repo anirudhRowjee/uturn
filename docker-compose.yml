@@ -1,0 +1,31 @@
+# this is the docker-compose file for uturn
+
+version: "3"
+
+services:
+
+  db:
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "uturn"
+      POSTGRES_PASSWORD: "password"
+    image: postgres:latest
+    ports:
+      - "7000:5432"
+    volumes:
+      - database:/var/lib/postgresql/data
+
+  web:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      # this prevents us from rebuilding the image whenever we install a new package
+      - registry:/root/.cargo/registry # Secret Sauce
+
+volumes:
+  database:
+    driver: local
+  registry:
+    driver: local
